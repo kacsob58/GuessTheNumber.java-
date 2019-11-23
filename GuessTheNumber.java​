@@ -1,0 +1,70 @@
+package pl.tt;
+import java.sql.SQLOutput;
+import java.util.Scanner;
+import java.lang.Math;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int mainNumber = (int) (Math.random() * 100);
+
+        Scanner keyboard = new Scanner(System.in);
+        int numberOfTries = 0;
+        String guessingNumber;
+
+        System.out.println("Aby się poddać napisz: STOP");
+
+        while (true) {
+
+
+            System.out.println("Podaj dowolna liczbę:");
+            guessingNumber = keyboard.nextLine();
+
+            numberOfTries ++;
+
+            if(guessingNumber.equals("STOP")){
+                if (true){
+                    numberOfTries = numberOfTries - 1;
+                }
+                System.out.println("Nie udało ci się. Następnym razem będzie lepiej.");
+                System.out.print("Twoja liczba prób to: ");
+                System.out.println(numberOfTries);
+                System.out.print("Zgadywana liczba to: ");
+                System.out.println(mainNumber);
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+                break;
+
+            }
+
+            int guessingNumber2 = Integer.parseInt(guessingNumber);
+
+            if (guessingNumber2 > mainNumber) {
+                System.out.println("Liczba zbyt wielka. Spróbuj ponownie!");
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+            }
+            if (guessingNumber2 < mainNumber) {
+                System.out.println("Liczba zbyt mała. Spróbuj ponownie!");
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+
+            }
+            if (guessingNumber2 == mainNumber) {
+
+                System.out.println("Gratulacje! Odgadłeś liczbę!");
+                System.out.print("Twoja liczba prób to: ");
+                System.out.println(numberOfTries);
+                System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+                break;
+
+            }
+
+
+
+
+        }
+    }
+}
